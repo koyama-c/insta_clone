@@ -1,16 +1,21 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "InstaClone", root_path, id: "logo" %>
     <nav>
-      <ul class="nav navbar-nav navbar-right">
-      <% if user_signed_in? %>                <strong><%= link_to current_user.username, pages_show_path %></strong>
-        <%= link_to 'プロフィール変更', edit_user_registration_path %>
-        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+      <% if user_signed_in? %> 
+       <%= link_to "InstaClone", home_path, id: "logo" %>
+       <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to 'ユーザー一覧', users_path %></li>           
+        <li><%= link_to current_user.name, user_path(id: current_user.id) %></li>
+        <li><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+       </ul>
       <% else %>
-        <%= link_to 'サインアップ', new_user_registration_path %>            
-        <%= link_to 'ログイン', new_user_session_path %>
+       <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to 'サインアップ', new_user_registration_path %> </li>           
+        <li><%= link_to 'ログイン', new_user_session_path %></li>
+       </ul>
       <% end %>
-      </ul>
+
     </nav>
   </div>
 </header>
