@@ -8,7 +8,7 @@ class PostsController < ApplicationController
       redirect_to home_url
     else
       @feed_items = []        
-      render home_path
+      redirect_to home_path
     end
   end
 
@@ -21,7 +21,7 @@ class PostsController < ApplicationController
 private
 
   def post_params
-     params.require(:post).permit(:content)
+     params.require(:post).permit(:content, :picture)
   end
 
   def correct_user
