@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :posts, dependent: :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -22,6 +23,10 @@ class User < ApplicationRecord
     user
   end
 
+ def feed
+    Post.where("user_id = ?", id)
+ end
+ 
   private
 
   def self.dummy_email(auth)
