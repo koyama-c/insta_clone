@@ -3,6 +3,7 @@
 
 body {
   padding-top: 60px;
+  padding-bottom:70px;
 }
 
 section {
@@ -186,4 +187,9 @@ span.picture {
   input {
     border: 0;
   }
+}
+.center-block{
+  width: 500px;
+  height: 100px;
+  margin: auto;
 }

@@ -21,7 +21,12 @@
     <%= f.label :profile %><br />
     <%= f.text_area :profile, autofocus: true %>
   </div>  
-
+  
+  <div class="field">  
+      <%=f.label :image,"ProfileImage" %>
+      <%= f.file_field :image %>
+  </div></br>
+  
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
@@ -44,7 +49,7 @@
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
-
+  <br />
     <%= f.submit "Update", class: "btn btn-primary" %>
 <% end %>
 

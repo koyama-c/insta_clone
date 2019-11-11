@@ -7,6 +7,7 @@ class User < ApplicationRecord
          :confirmable, :lockable, :timeoutable, :omniauthable, omniauth_providers: [:facebook]
   validates :name, presence: true 
   validates :profile, length: { maximum: 200 } 
+  mount_uploader :image, ImageUploader
   
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
