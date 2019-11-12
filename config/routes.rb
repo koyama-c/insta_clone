@@ -5,7 +5,13 @@ Rails.application.routes.draw do
     root to: 'devise/registrations#new'
   end
   resources :users,   only: [:index, :show]
-  resources :posts,   only: [:create, :destroy]  
+  resources :posts,   only: [:create, :destroy]
+  resources :relationships,       only: [:create, :destroy]  
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end  
   get  '/home',        to: 'static_pages#home'
   get  '/help',    to: 'static_pages#help'
   get  '/about',   to: 'static_pages#about'
