@@ -10,7 +10,7 @@ protect_from_forgery with: :exception
   end
   
   def after_sign_in_path_for(resource)
-    users_path
+    home_path
   end
 
 end

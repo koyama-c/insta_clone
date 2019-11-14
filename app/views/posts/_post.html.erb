@@ -1,8 +1,10 @@
+<div class="postsbox">
 <li id="post-<%= post.id %>">
-
   <span class="user"><%= link_to post.user.name, post.user %></span>
-  <span class="content"><%= post.content %></span>
-    <%= image_tag post.picture.url if post.picture? %>  
+  <span class="content">
+    <%= post.content %>
+    <%= image_tag post.picture.url  if post.picture? %>
+  </span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(post.created_at) %> ago.
     <% if current_user == post.user %>
@@ -11,3 +13,4 @@
     <% end %>    
   </span>
 </li>
+</div>
