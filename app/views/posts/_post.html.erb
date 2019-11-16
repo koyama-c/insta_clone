@@ -13,4 +13,10 @@
     <% end %>    
   </span>
 </li>
+      <div class="comment">
+      <div class="comment_area" id="comment_area">
+        <%= render 'comments/index', comments: post.comments, post: post %>
+      </div>
+      <%= render 'comments/form', comment: Comment.new , post: post  %>
+    </div>
 </div>

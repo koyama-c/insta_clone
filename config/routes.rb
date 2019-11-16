@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     root to: 'devise/registrations#new'
   end
   resources :users,   only: [:index, :show]
-  resources :posts,   only: [:create, :destroy]
+  resources :posts do
+    resources :comments
+  end
   resources :relationships,       only: [:create, :destroy]  
   resources :users do
     member do

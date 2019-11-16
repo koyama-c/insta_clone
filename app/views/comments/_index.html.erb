@@ -1,0 +1,15 @@
+  <% comments.each do |comment| %>
+  <% unless comment.id.nil? %>
+    <div class="one_come">
+      <%= link_to "#{comment.user.name}", comment.user, class: "cmntname" %>
+      <span class="content">
+        <%= comment.content %>
+      </span>
+      <% if comment.user == current_user %>
+        <span class="delete_cmnt">
+           <%= link_to " ×",post_comment_path(comment.post_id, comment.id), method: :delete, remote: true, class: "cmnt_delete" %>
+        </span><!--.delete_cmnt-->
+      <% end %>
+    </div><!--.one_come-->
+  <% end %>
+<% end %>
