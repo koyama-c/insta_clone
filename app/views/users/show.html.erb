@@ -8,10 +8,40 @@
     <%= render 'follow_form' %> 
     <% if @user.posts.any? %>
       <h3>Posts (<%= @user.posts.count %>)</h3>
-      <ol class="userposts">
-      <%= render @posts %>
-      </ol>
-      <%= will_paginate @posts %>
-    <% end %>
   </div>
 </div>
+  
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+ <ol class="userposts">
+     <% @posts.each do |post| %>
+     <div class="postsbox">
+         <a data-toggle="modal" data-target="#modal-e<%= post.id %>" data-backdrop="true">
+             <%= image_tag post.picture.url  if post.picture? %>
+         </a>
+     <div class="modal fade" id="modal-e<%= post.id %>" tabindex="-1">
+        <div class="modal-dialog modal-vertical-centered">
+            <div class="modal-content"  style="height: 550px;">
+                <div class="modal-body" style="height: 490px;">
+                    <div class="userpostsbox">
+                    <%= render 'posts/userpost', posts: @user.posts, post: post %>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-defalt" data-dismiss="modal">閉じる</button>
+                </div>
+            </div>
+        </div>
+     </div>
+    </div>
+    <% end %>
+ </ol>    
+</body>
+</html>
+
+<%= will_paginate @posts %>
+    <% end %>

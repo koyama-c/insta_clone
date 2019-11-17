@@ -1,7 +1,5 @@
-<div class="postsbox">
 <li id="post-<%= post.id %>">
-  <span class="user"><%= link_to post.user.name, post.user %></span>
-  <span class="content">
+  <span class="userpostcontent">
     <%= post.content %>
     <%= image_tag post.picture.url  if post.picture? %>
   </span>
@@ -12,11 +10,11 @@
                               data: { confirm: "You sure?" } %>
     <% end %>    
   </span>
-</li>
-    <div class="comment">
-      <div class="comment_area" id="comment_area">
-        <%= render 'comments/index', comments: post.comments, post: post %>
-      </div>
-      <%= render 'comments/form', comment: Comment.new , post: post  %>
+
+  <span class="comment">
+    <div class="comment_area" id="comment_area">
+      <%= render 'comments/index', comments: post.comments, post: post %>
     </div>
-</div>
+    <%= render 'comments/form', comment: Comment.new , post: post  %>
+  </span>
+</li>

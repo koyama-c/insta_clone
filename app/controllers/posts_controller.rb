@@ -12,7 +12,7 @@ class PostsController < ApplicationController
       redirect_to home_url
     else
       @feed_items = []        
-      redirect_to home_path
+      redirect_to home_url
     end
   end
 

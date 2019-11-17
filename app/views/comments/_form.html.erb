@@ -1,12 +1,8 @@
 <%= form_with(model: [post, comment]) do |f| %>
   <div class="area_cmnt">
-    <ul>
-      <li>
-        <%= f.text_area :content, placeholder: "コメントを入力", class: "comment_text", id: "text_area" %>
-      </li>
-        <div class="actions">
-         <%= f.submit "コメントをする" %>
-        </div>
-    </ul>
+      <%= f.text_area :content, placeholder: "コメントを入力", class: "comment_text", id: "text_area" %>
+      <div class="actions">
+          <%= f.submit "コメントをする", class:"btn btn-default" %>
+      </div>
   </div>
 <% end %>
