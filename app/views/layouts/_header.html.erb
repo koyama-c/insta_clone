@@ -6,6 +6,10 @@
        <ul class="nav navbar-nav navbar-right">
         <li><%= link_to 'ユーザー一覧', users_path %></li>           
         <li><%= link_to current_user.name, user_path(id: current_user.id) %></li>
+        <li class="notification"><%= link_to '通知', notifications_path, class:"btn"  %>
+         <% if unchecked_notifications.any? %>
+          <i class="fa fa-circle notification-circle"></i>
+         <% end %>
         <li><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
        </ul>

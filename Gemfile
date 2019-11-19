@@ -17,6 +17,7 @@ gem 'jbuilder',     '2.7.0'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'counter_culture', '~> 1.8'
+gem 'font-awesome-sass', '~> 5.4.1'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'

@@ -1,5 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
 
 body {
   padding-top: 60px;
@@ -295,4 +297,11 @@ span.picture {
 transform: translate(0, 20%) !important;
 -ms-transform: translate(0, 20%) !important; /* IE 9 */
 -webkit-transform: translate(0, 20%) !important; /* Safari and Chrome */
+}
+
+.user-view-clearfix{
+  border-top: 1px solid #e8e8e8;
+}
+img.notificationform{
+  width: 60px;
 }
