@@ -58,6 +58,13 @@ class Post < ApplicationRecord
     end
   end
 
+  def self.search(search)
+      if search
+        Post.where(['content LIKE ?', "%#{search}%"])
+      else
+        Post.all
+      end
+  end
   
   private
 

@@ -21,6 +21,8 @@ class PostsController < ApplicationController
     flash[:success] = "Post deleted"
     redirect_to request.referrer || home_path      
   end
+
+
   
 private
 

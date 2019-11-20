@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
     @post = current_user.posts.build
-    @feed_items = current_user.feed.paginate(page: params[:page]) 
+    @feed_items = current_user.feed.paginate(page: params[:page]).search(params[:search])
     @comment = Comment.new
     @comments = @post.comments
   end

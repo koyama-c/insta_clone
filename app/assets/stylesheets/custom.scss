@@ -57,7 +57,7 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: #006699;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
@@ -65,10 +65,15 @@ p {
 }
 
 #logo:hover {
-  color: #fff;
+  color: #A4C6FF;
   text-decoration: none;
 }
 
+.navbar{
+    border-radius: 0;
+    border: none;
+    background-color: #003355; 
+}
 
 footer {
   margin-top: 45px;
