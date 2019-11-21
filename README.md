@@ -1,24 +1,19 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+自分が苦労した点
+　機能を追加していく中で一度エラーが出た時にうまく対処できず
+　複数のエラーのループに陥ってしまったこと。
+　また、Ajaxを用いたビューの実装についてうまく表示させることに時間がかかった。
+　
+学んだ点
+　機能を追加していくと同じようなコードや、不要にな部分が出てきたりするので
+　うまくまとめて見やすくすることを心がけていかないといけないと思った。
+　自分がイメージするレイアウトになかなか出来なかったので
+　今後もっと知識や技術を身につけようと思った。
+　
+相談したい点
+　検索しながらでも大まかな機能の実装が出来たことが嬉しかった。
+　
+自慢したい点　
+　未経験のため業務のイメージがしづらく、
+　現時点でバックエンドとフロントエンドどちらを重点的に
+　力をつけていくのが即戦力として良いのか気になっています。
